@@ -45,6 +45,7 @@ function NewTask({ onAdd }) {
         className="w-full sm:w-auto flex items-center justify-center text-stone-700 hover:text-stone-950 px-3 py-2 rounded-sm"
         onClick={handleClickAddTask}
       >
+        Add
         <Plus className="h-6 w-6 sm:h-8 sm:w-8 text-stone-500 hover:text-stone-950" />
       </button>
     </div>
