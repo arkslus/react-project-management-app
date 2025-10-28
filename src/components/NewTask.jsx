@@ -20,20 +20,32 @@ function NewTask({ onAdd }) {
     setEnteredTask("");
   };
 
+  // submit on Enter
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      handleClickAddTask();
+    }
+  };
+
   // Render the NewTask component
   return (
-    <div className="flex items-center gap-4 mb-3">
+    <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-4 mb-3">
       <input
         type="text"
-        className="w-64 px-2 py-1 rounded-sm bg-stone-200"
+        placeholder="New task"
+        aria-label="New task"
+        className="flex-1 min-w-0 w-full sm:w-64 px-3 py-2 rounded-sm bg-stone-200 focus:outline-none focus:ring-2 focus:ring-stone-300"
         onChange={handleTaskChange}
+        onKeyDown={handleKeyDown}
         value={enteredTask}
       />
+
       <button
-        className="text-stone-700 hover:text-stone-950"
+        aria-label="Add task"
+        className="w-full sm:w-auto flex items-center justify-center text-stone-700 hover:text-stone-950 px-3 py-2 rounded-sm"
         onClick={handleClickAddTask}
       >
-        <Plus className="h-8 w-8 text-stone-500 hover:text-stone-950" />
+        <Plus className="h-6 w-6 sm:h-8 sm:w-8 text-stone-500 hover:text-stone-950" />
       </button>
     </div>
   );

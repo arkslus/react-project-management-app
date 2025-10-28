@@ -7,7 +7,7 @@ function ProjectSidebar({
   selectedProjectId,
 }) {
   return (
-    <aside className="w-1/3 px-8 py-16 bg-stone-900 text-stone-50 md:w-72  rounded-r-xl">
+    <aside className="h-full w-full md:w-72 px-6 py-8 bg-stone-900 text-stone-50 rounded-r-xl">
       <h2 className="mb-7 font-bold uppercase md:text-2xl text-[#e0afa0] flex items-center">
         My Projects
         <ListCheck className="inline-block h-7 w-7 mx-1" />

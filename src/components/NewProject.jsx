@@ -44,7 +44,7 @@ function NewProject({ onAdd, onCancel }) {
           Please provide a valid input for all fields.
         </p>
       </Modal>
-      <div className="w-[35rem] mt-16">
+      <div className="w-full max-w-3xl mt-6 md:mt-16 mx-auto">
         <menu className="flex items-center justify-end gap-4 my-4">
           <li>
             <button
