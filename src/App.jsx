@@ -4,6 +4,7 @@ import NewProject from "./components/NewProject.jsx";
 import NoProjectSelected from "./components/NoProjectSelected.jsx";
 import ProjectSidebar from "./components/ProjectSidebar.jsx";
 import SelectedProject from "./components/SelectedProject.jsx";
+import Footer from "./components/Footer.jsx";
 
 function App() {
   const [projectState, setProjectState] = useState({
@@ -126,7 +127,7 @@ function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-[#e0afa0]">
+    <div className="min-h-screen bg-[#e0afa0] flex flex-col">
       {/* Mobile header with menu button */}
       <header className="md:hidden flex items-center justify-between p-3">
         <button
@@ -140,7 +141,7 @@ function App() {
         <div style={{ width: 40 }} />
       </header>
 
-      <main className="h-[calc(100vh-48px)] md:h-screen flex">
+      <main className="flex-1 flex">
         {/* Sidebar (overlay on mobile) */}
         <div
           className={`fixed inset-y-0 left-0 z-40 w-72 transform bg-transparent transition-transform md:static md:translate-x-0 md:block ${
@@ -171,10 +172,10 @@ function App() {
         )}
 
         {/* Main content area */}
-        <div className="flex-1 p-4 overflow-auto">
-          {content}
-        </div>
+        <div className="flex-1 p-4 overflow-auto">{content}</div>
       </main>
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }
